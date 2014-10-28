@@ -10,7 +10,7 @@ var stripNonEssentials = function () {
   if (!videoContainer) return;
 
   videoContainer.css('display', 'none');
-  playerAPI.height(30);
+  playerAPI.height(40);
   relatedLinks.find('img').remove();
 
   $('body').empty().append(videoContainer, playerAPI, title, relatedLinks);
