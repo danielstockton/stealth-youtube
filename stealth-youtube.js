@@ -1,18 +1,22 @@
-// Remove video.
-document.getElementsByClassName("html5-video-container")[0].style.display = "none";
-document.getElementById("player-api").style.height = "30px";
 
-// Remove thumbnails.
-var thumbnails = document.querySelectorAll(".yt-uix-simple-thumb-wrap, .video-thumb");
+var stripNonEssentials = function () {
 
-for (var i = 0, thumbnail; thumbnail = thumbnails[i]; i++) {
-  thumbnail.style.display = "none";
-}
+  var videoContainer = $('.html5-video-container'), // Video container.
+      playerAPI = $('#player-api'), // Player controls.
+      title = $('#eow-title'), // Current video title.
+      relatedLinks = $('a.related-video').after('<br>'); // Related video links.
 
-// Reduce font size of titles.
-var titles = document.querySelectorAll("#eow-title, .title");
+  // Not a player view?
+  if (!videoContainer) return;
 
-for (var i = 0, title; title = titles[i]; i++) {
-  title.style.fontSize = "10px";
-}
+  videoContainer.css('display', 'none');
+  playerAPI.height(30);
+  relatedLinks.find('img').remove();
+
+  $('body').empty().append(videoContainer, playerAPI, title, relatedLinks);
+
+};
+
+stripNonEssentials();
+$('body').click(stripNonEssentials);
 

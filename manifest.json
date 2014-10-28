@@ -14,7 +14,7 @@
   "content_scripts": [
     {
       "matches": ["*://www.youtube.com/*"],
-      "js": ["stealth-youtube.js"],
+      "js": ["jquery.js", "stealth-youtube.js"],
       "run_at": "document_end"
     }
   ]
