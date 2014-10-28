@@ -1,5 +1,5 @@
 
-var stripNonEssentials = function () {
+var obscureView = function() {
 
   var videoContainer = $('.html5-video-container'), // Video container.
       playerAPI = $('#player-api'), // Player controls.
@@ -11,12 +11,12 @@ var stripNonEssentials = function () {
 
   videoContainer.css('display', 'none');
   playerAPI.height(40);
+  title.css('font-size', '10px');
+  relatedLinks.find('span').css('font-size', '10px');
   relatedLinks.find('img').remove();
-
-  $('body').empty().append(videoContainer, playerAPI, title, relatedLinks);
 
 };
 
-stripNonEssentials();
-$('body').click(stripNonEssentials);
+obscureView();
+$('body').click(obscureView);
 
