@@ -17,6 +17,18 @@ var obscureView = function() {
 
 };
 
-obscureView();
-$('body').click(obscureView);
+// YouTube uses PushState on related links.
+function afterNavigate() {
+  obscureView();
+  $('body').click(obscureView);
+};
+
+$(document).bind('transitionend', function(e) {
+  e = e.originalEvent;
+  if (e.propertyName === 'width' && e.target.id === 'progress') {
+    afterNavigate();
+  }
+});
+
+afterNavigate();
 
