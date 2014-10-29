@@ -1,45 +1,53 @@
 // Stealth-YouTube
 
-var enabled = JSON.parse(localStorage.getItem('enabled'));
-if (!enabled && enabled !== false) enabled = true; // Enabled by default.
+var loaded = function(storageValues) {
 
-var toggleFn = "function toggle() { localStorage.setItem('enabled', !JSON.parse(localStorage.getItem('enabled'))); window.location.reload(); }"
-var script = document.createElement("script");
-script.innerHTML = "window.toggle = " + toggleFn;
-document.head.appendChild(script);
+  var enabled = storageValues.enabled;
+  if (!enabled && enabled !== false) enabled = true; // Enabled by default.
 
-var obscureView = function() {
+  /*
+   *var toggleFn = "function toggle() { localStorage.setItem('enabled', !JSON.parse(localStorage.getItem('enabled'))); window.location.reload(); }"
+   *var script = document.createElement("script");
+   *script.innerHTML = "window.toggle = " + toggleFn;
+   *document.head.appendChild(script);
+   */
 
-  if (!enabled) return;
+  var obscureView = function() {
 
-  var videoContainer = $('.html5-video-container'), // Video container.
-      playerAPI = $('#player-api'), // Player controls.
-      title = $('#eow-title'), // Current video title.
-      relatedLinks = $('a.related-video'); // Related video links.
+    if (!enabled) return;
 
-  // Not a player view?
-  if (!videoContainer) return;
+    var videoContainer = $('.html5-video-container'), // Video container.
+        playerAPI = $('#player-api'), // Player controls.
+        title = $('#eow-title'), // Current video title.
+        relatedLinks = $('a.related-video'); // Related video links.
 
-  videoContainer.css('display', 'none');
-  playerAPI.height(40);
-  title.css('font-size', '10px');
-  relatedLinks.find('span').css('font-size', '10px');
-  relatedLinks.find('img').remove();
+    // Not a player view?
+    if (!videoContainer) return;
 
-}
+    videoContainer.css('display', 'none');
+    playerAPI.height(40);
+    title.css('font-size', '10px');
+    relatedLinks.find('span').css('font-size', '10px');
+    relatedLinks.find('img').remove();
 
-// YouTube uses PushState on related links.
-function afterNavigate() {
-  obscureView();
-  $('body').click(obscureView);
-}
-
-$(document).bind('transitionend', function(e) {
-  e = e.originalEvent;
-  if (e.propertyName === 'width' && e.target.id === 'progress') {
-    afterNavigate();
   }
-});
 
-afterNavigate();
+  // YouTube uses PushState on related links.
+  function afterNavigate() {
+    obscureView();
+    $('body').click(obscureView);
+  }
+
+  $(document).bind('transitionend', function(e) {
+    e = e.originalEvent;
+    if (e.propertyName === 'width' && e.target.id === 'progress') {
+      afterNavigate();
+    }
+  });
+
+  afterNavigate();
+
+}
+
+chrome.storage.sync.get('enabled', loaded);
 
