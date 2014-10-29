@@ -16,6 +16,7 @@
     {
       "matches": ["*://www.youtube.com/*"],
       "js": ["jquery.js", "stealth-youtube.js"],
+      "css": ["skins/stackoverflow/style.css"],
       "run_at": "document_end"
     }
   ]

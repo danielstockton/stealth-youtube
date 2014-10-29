@@ -14,21 +14,35 @@ var loaded = function(storageValues) {
 
   var obscureView = function() {
 
-    if (!enabled) return;
-
     var videoContainer = $('.html5-video-container'), // Video container.
         playerAPI = $('#player-api'), // Player controls.
         title = $('#eow-title'), // Current video title.
-        relatedLinks = $('a.related-video'); // Related video links.
+        relatedLinks = $('a.related-video'), // Related video links.
+        skinId = 'stackoverflow', // Selected skin
+        skinCssUrl = chrome.extension.getURL('skins/' + skinId +'/style.css?v=1'),
+        skinCssTag = $('link.stealth-youtube.' + skinId);
+
+    if (!enabled) return;
 
     // Not a player view?
     if (!videoContainer) return;
 
     videoContainer.css('display', 'none');
-    playerAPI.height(40);
+    playerAPI.height(50);
     title.css('font-size', '10px');
     relatedLinks.find('span').css('font-size', '10px');
     relatedLinks.find('img').remove();
+
+    // Apply skin
+    if (!skinCssTag) {
+      $('.link.stealth-youtube').remove(); // remove prev skin, if any
+      skinCssTag = document.createElement('link');
+      skinCssTag.setAttribute('class', 'stealth-youtube ' + skinId);
+      skinCssTag.setAttribute('rel', 'stylesheet');
+      skinCssTag.setAttribute('type', 'text/css');
+      skinCssTag.setAttribute('href', skinCssUrl);
+      document.getElementByTagName('head')[0].appendChild(skinCssTag);
+    }
 
   }
 
