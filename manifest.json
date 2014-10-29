@@ -5,7 +5,8 @@
   "description": "Listen to Youtube videos without anyone seeing what it is.",
   "version": "0.1",
   "permissions": [
-    "*://www.youtube.com/*"
+    "*://www.youtube.com/*",
+    "storage"
   ],
   "browser_action": {
     "default_icon": "icon.png",
@@ -14,7 +15,7 @@
   "content_scripts": [
     {
       "matches": ["*://www.youtube.com/*"],
-      "js": ["stealth-youtube.js"],
+      "js": ["jquery.js", "stealth-youtube.js"],
       "run_at": "document_end"
     }
   ]

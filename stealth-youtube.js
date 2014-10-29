@@ -1,34 +1,53 @@
-var obstructView = function () {
+// Stealth-YouTube
 
-    // not a player view ?
-    if (!document.getElementsByClassName("html5-video-container").length) {
-        return;
+var loaded = function(storageValues) {
+
+  var enabled = storageValues.enabled;
+  if (!enabled && enabled !== false) enabled = true; // Enabled by default.
+
+  /*
+   *var toggleFn = "function toggle() { localStorage.setItem('enabled', !JSON.parse(localStorage.getItem('enabled'))); window.location.reload(); }"
+   *var script = document.createElement("script");
+   *script.innerHTML = "window.toggle = " + toggleFn;
+   *document.head.appendChild(script);
+   */
+
+  var obscureView = function() {
+
+    if (!enabled) return;
+
+    var videoContainer = $('.html5-video-container'), // Video container.
+        playerAPI = $('#player-api'), // Player controls.
+        title = $('#eow-title'), // Current video title.
+        relatedLinks = $('a.related-video'); // Related video links.
+
+    // Not a player view?
+    if (!videoContainer) return;
+
+    videoContainer.css('display', 'none');
+    playerAPI.height(40);
+    title.css('font-size', '10px');
+    relatedLinks.find('span').css('font-size', '10px');
+    relatedLinks.find('img').remove();
+
+  }
+
+  // YouTube uses PushState on related links.
+  function afterNavigate() {
+    obscureView();
+    $('body').click(obscureView);
+  }
+
+  $(document).bind('transitionend', function(e) {
+    e = e.originalEvent;
+    if (e.propertyName === 'width' && e.target.id === 'progress') {
+      afterNavigate();
     }
+  });
 
-    // Remove video.
-    document.getElementsByClassName("html5-video-container")[0].style.display="none";
-    document.getElementById("player-api").style.height="30px";
+  afterNavigate();
 
-    document.getElementById("eow-title").style.fontSize = "10px";
+}
 
-    (function obstructRelated() {
+chrome.storage.sync.get('enabled', loaded);
 
-        var thumbnails = document.querySelectorAll(".yt-uix-simple-thumb-wrap, .video-thumb"),
-            titles = document.querySelectorAll("#eow-title, .title");
-
-        // Remove thumbnails.
-        for (var i = 0, thumbnail; thumbnail = thumbnails[i]; i++) {
-          thumbnail.style.display = "none";
-        }
-
-        // Reduce font size of titles.
-        for (var i = 0, title; title = titles[i]; i++) {
-          title.style.fontSize = "10px";
-        }
-
-    })();
-};
-
-obstructView();
-
-document.getElementsByTagName("body").onclick = obstructView;
