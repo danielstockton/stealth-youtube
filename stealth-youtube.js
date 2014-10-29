@@ -17,7 +17,7 @@ var loaded = function(storageValues) {
     var videoContainer = $('.html5-video-container'), // Video container.
         playerAPI = $('#player-api'), // Player controls.
         title = $('#eow-title'), // Current video title.
-        relatedLinks = $('a.related-video'), // Related video links.
+        relatedLinks = $('a.related-video, a.related-playlist'), // Related video links.
         skinId = 'stackoverflow', // Selected skin
         skinCssUrl = chrome.extension.getURL('skins/' + skinId +'/style.css?v=1'),
         skinCssTag = $('link.stealth-youtube.' + skinId);
