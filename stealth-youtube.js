@@ -35,7 +35,7 @@ var loaded = function(storageValues) {
 
     // Apply skin
     if (!skinCssTag) {
-      $('.link.stealth-youtube').remove(); // remove prev skin, if any
+      $('link.stealth-youtube').remove(); // remove prev skin, if any
       skinCssTag = document.createElement('link');
       skinCssTag.setAttribute('class', 'stealth-youtube ' + skinId);
       skinCssTag.setAttribute('rel', 'stylesheet');
