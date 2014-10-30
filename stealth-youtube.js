@@ -18,9 +18,7 @@ var loaded = function(storageValues) {
         playerAPI = $('#player-api'), // Player controls.
         title = $('#eow-title'), // Current video title.
         relatedLinks = $('a.related-video, a.related-playlist'), // Related video links.
-        skinId = 'stackoverflow', // Selected skin
-        skinCssUrl = chrome.extension.getURL('skins/' + skinId +'/style.css?v=1'),
-        skinCssTag = $('link.stealth-youtube.' + skinId);
+        skinId = 'stackoverflow'; // Selected skin
 
     if (!enabled) return;
 
@@ -34,15 +32,7 @@ var loaded = function(storageValues) {
     relatedLinks.find('img').remove();
 
     // Apply skin
-    if (!skinCssTag) {
-      $('link.stealth-youtube').remove(); // remove prev skin, if any
-      skinCssTag = document.createElement('link');
-      skinCssTag.setAttribute('class', 'stealth-youtube ' + skinId);
-      skinCssTag.setAttribute('rel', 'stylesheet');
-      skinCssTag.setAttribute('type', 'text/css');
-      skinCssTag.setAttribute('href', skinCssUrl);
-      document.getElementByTagName('head')[0].appendChild(skinCssTag);
-    }
+    chrome.tabs.insertCSS('skins/'+skinId+'/style.css');
 
   }
 
