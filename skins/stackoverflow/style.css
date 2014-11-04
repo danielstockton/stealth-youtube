@@ -11,6 +11,10 @@ html body #logo-container {
     display: block;
 }
 
+#body-container .appbar-hidden #masthead-positioner-height-offset {
+    height: 60px;
+}
+
 html body #yt-masthead .yt-masthead-logo-container {
     width: 320px;
 }
