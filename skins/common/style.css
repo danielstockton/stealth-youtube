@@ -23,6 +23,9 @@ html.stealth-mode a.related-video span, html.stealth-mode a.related-playlist spa
 html.stealth-mode a.related-video img, html.stealth-mode a.related-playlist img
 { display: none }
 
+html.stealth-mode #watch-related div.thumb-wrapper img { display: none; }
+html.stealth-mode #watch-related span.title { font-size: 10px; }
+
 body#stealth-popup {
   font-family: 'Open Sans', sans-serif;
   height: 100px;
