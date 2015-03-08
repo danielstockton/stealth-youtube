@@ -1,14 +1,14 @@
 /* Logo */
 
-html.stealth-mode-stackoverflow body #logo-container {
+html.stealth-stackoverflow body #logo-container {
     background: no-repeat url('https://cdn.sstatic.net/stackoverflow/img/sprites.png');
     width: 250px;
-    height: 61px;
-    background-position: 0 0;
+    height: 40px;
+    background-position: 0 -10px;
     display: block;
 }
 
-html.stealth-mode-stackoverflow body .yt-uix-button-subscribe-branded { /* coloured buttons */
+html.stealth-stackoverflow body .yt-uix-button-subscribe-branded { /* coloured buttons */
     background-color: #f90;
     color: white;
     font-weight: bold;
