@@ -23,3 +23,9 @@ html.stealth-mode span.yt-uix-simple-thumb-wrap
 { display: none }
 html.stealth-mode #watch-related.video-list span.title
 { font-size: 10px; }
+
+body#stealth-popup {
+  font-family: 'Open Sans', sans-serif;
+  height: 100px;
+  width: 400px;
+}
