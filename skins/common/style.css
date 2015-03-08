@@ -6,11 +6,12 @@ html.stealth-mode #body-container .appbar-hidden #masthead-positioner-height-off
     height: 60px;
 }
 
-html.stealth-mode body #yt-masthead .yt-masthead-logo-container {
-    width: 320px;
-}
-
-html.stealth-mode .yt-uix-button-icon-wrapper { display: none !important } /* hide play icons */
+/*ads*/
+html.stealth-mode .watch7-sidebar-contents,
+html.stealth-mode .watch7-sidebar-ads,
+/* hide play icons */
+html.stealth-mode .yt-uix-button-icon-wrapper
+{ display: none !important }
 
 /* player */
 html.stealth-mode .html5-video-container { display: none }
@@ -18,7 +19,7 @@ html.stealth-mode #player-api { height: 50px }
 /* current video title */
 html.stealth-mode #eow-title { display: none }
 /* related links */
-html.stealth-mode a.related-video span, html.stealth-mode a.related-playlist span
-{ font-size: 10px }
-html.stealth-mode a.related-video img, html.stealth-mode a.related-playlist img
+html.stealth-mode span.yt-uix-simple-thumb-wrap
 { display: none }
+html.stealth-mode #watch-related.video-list span.title
+{ font-size: 10px; }
