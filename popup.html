@@ -3,8 +3,25 @@
   <h1>
     Stealth Youtube
   </h1>
-  <input type="checkbox" id="enabled">
-  <label for="enabled">Enabled</label>
+  <form name="frm">
+    <p>
+    <input type="checkbox" id="enabled" name="enabled" />
+    <label for="enabled">Enabled</label>
+    </p>
+
+    <p>
+    <label for="skin">
+      Skin of choice
+    </label>
+    <select id="skin" name="skin">
+    </select>
+    </p>
+    <p>
+    <button id="save" name="save">Save</button>
+    </p>
+  </form>
+
+
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="common.js"></script>
   <script type="text/javascript" src="popup.js"></script>

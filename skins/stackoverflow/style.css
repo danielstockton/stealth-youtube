@@ -1,4 +1,7 @@
 /* Logo */
+html.stealth-mode body #yt-masthead .yt-masthead-logo-container {
+    width: 320px;
+}
 
 html.stealth-stackoverflow body #logo-container {
     background: no-repeat url('https://cdn.sstatic.net/stackoverflow/img/sprites.png');

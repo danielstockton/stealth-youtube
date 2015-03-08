@@ -1,0 +1,19 @@
+/* Logo */
+
+html.stealth-webmd body #logo-container {
+    background: no-repeat url('https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/usability/2012/LBi_Masthead/logo_trans.png');
+    width: 160px;
+    height: 40px;
+    background-position: 0 0;
+    display: block;
+}
+
+html.stealth-webmd body .yt-uix-button-subscribe-branded { /* coloured buttons */
+    background-color: #1295cc;
+    color: white;
+    font-weight: bold;
+}
+
+html.stealh-webmd a !important {
+    color: #1295cc;
+}

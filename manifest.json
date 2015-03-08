@@ -20,7 +20,9 @@
       "matches": ["*://www.youtube.com/*"],
       "js": ["jquery.js", "common.js", "stealth-youtube.js"],
       "css": ["skins/common/style.css",
-              "skins/stackoverflow/style.css"],
+              "skins/stackoverflow/style.css",
+              "skins/webmd/style.css"
+      ],
       "run_at": "document_end"
     }
   ]

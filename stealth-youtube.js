@@ -1,5 +1,6 @@
 // Stealth-YouTube
 
+(function() {
 var GLOB = STEALTH_YOUTUBE_GLOBAL,
     settingsLoaded = function(storageValues) {
       var settings, obscureView;
@@ -22,3 +23,4 @@ var GLOB = STEALTH_YOUTUBE_GLOBAL,
   };
 
 chrome.storage.sync.get('settings', settingsLoaded);
+})();
