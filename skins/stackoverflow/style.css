@@ -1,28 +1,15 @@
 /* Logo */
 
-html body #logo-container img,
-html body #logo-container span { display: none}
-
-html body #logo-container {
-    background: no-repeat url('http://cdn.sstatic.net/stackoverflow/img/sprites.png');
+html.stealth-mode-stackoverflow body #logo-container {
+    background: no-repeat url('https://cdn.sstatic.net/stackoverflow/img/sprites.png');
     width: 250px;
     height: 61px;
     background-position: 0 0;
     display: block;
 }
 
-#body-container .appbar-hidden #masthead-positioner-height-offset {
-    height: 60px;
-}
-
-html body #yt-masthead .yt-masthead-logo-container {
-    width: 320px;
-}
-
-html body .yt-uix-button-subscribe-branded { /* coloured buttons */
+html.stealth-mode-stackoverflow body .yt-uix-button-subscribe-branded { /* coloured buttons */
     background-color: #f90;
     color: white;
     font-weight: bold;
 }
-
-.yt-uix-button-icon-wrapper { display: none !important } /* hide play icons */

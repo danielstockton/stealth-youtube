@@ -1,0 +1,24 @@
+/* no logo; also, a great economy and politics book by naomi klein */
+html.stealth-mode body #logo-container img,
+html.stealth-mode body #logo-container span { display: none}
+
+html.stealth-mode #body-container .appbar-hidden #masthead-positioner-height-offset {
+    height: 60px;
+}
+
+html.stealth-mode body #yt-masthead .yt-masthead-logo-container {
+    width: 320px;
+}
+
+html.stealth-mode .yt-uix-button-icon-wrapper { display: none !important } /* hide play icons */
+
+/* player */
+html.stealth-mode .html5-video-container { display: none }
+html.stealth-mode #player-api { height: 50px }
+/* current video title */
+html.stealth-mode #eow-title { display: none }
+/* related links */
+html.stealth-mode a.related-video span, html.stealth-mode a.related-playlist span
+{ font-size: 10px }
+html.stealth-mode a.related-video img, html.stealth-mode a.related-playlist img
+{ display: none }
