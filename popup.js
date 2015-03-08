@@ -8,7 +8,7 @@ chrome.storage.sync.get('settings', function(storageValues) {
   $('#enabled').change(function() {
     settings.enabled = $(this).is(':checked');
     chrome.storage.sync.set({settings: settings}, function() {
-      alert('Settings saved.');
+      alert('Settings saved. Reload tab for changes to be applied.');
     });
   });
 });
