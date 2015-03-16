@@ -1,0 +1,27 @@
+/* Logo */
+
+html.stealth-mode.stealth-spreadsheet body #yt-masthead-container {
+    background: no-repeat url('chrome-extension://__MSG_@@extension_id__/skins/spreadsheet/header.png');
+    background-position: 0 0;
+    height: 127px;
+}
+
+html.stealth-spreadsheet .watch-stage-mode #theater-background {
+    background-color: transparent;
+}
+
+html.stealth-spreadsheet #page {
+    background: repeat url('chrome-extension://__MSG_@@extension_id__/skins/spreadsheet/cell.png');
+}
+
+html.stealth-mode.stealth-spreadsheet #player-api { height: 128px }
+
+html.stealth-spreadsheet body #logo-container {
+    background: none;
+}
+
+html.stealth-spreadsheet body .yt-uix-button-subscribe-branded { /* coloured buttons */
+    background-color: #090;
+    color: white;
+    font-weight: bold;
+}

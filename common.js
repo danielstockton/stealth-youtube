@@ -7,6 +7,7 @@ STEALTH_YOUTUBE_GLOBAL = {
 
     availableSkins: [
         ['stackoverflow', 'Stackoverflow (IT Geeks)'],
+        ['spreadsheet', 'Spreadsheet (accountants)'],
         ['webmd', 'WebMD (meds)']
     ]
 
