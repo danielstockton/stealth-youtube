@@ -6,6 +6,11 @@ html.stealth-mode #body-container .appbar-hidden #masthead-positioner-height-off
     height: 60px;
 }
 
+html.stealth-mode .watch-stage-mode #theater-background {
+    background-color: transparent;
+}
+
+
 /*ads*/
 html.stealth-mode .watch7-sidebar-contents,
 html.stealth-mode .watch7-sidebar-ads,
