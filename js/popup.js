@@ -3,7 +3,7 @@
 
   chrome.storage.sync.get('settings', function(storageValues) {
     var settings = storageValues.settings,
-        icon = 'icon.png',
+        icon = 'icons/icon.png',
         skin;
     if (settings === undefined)
       settings = GLOB.defaultSettings;
@@ -25,7 +25,7 @@
       chrome.storage.sync.set({settings: settings}, function() {
 
         if (!settings.enabled) {
-          icon = 'icon-off.png';
+          icon = 'icons/icon-off.png';
         }
         chrome.runtime.sendMessage({task: 'setIcon', iconPath: icon});
       });
