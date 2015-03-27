@@ -34,3 +34,10 @@ body#stealth-popup {
   height: 100px;
   width: 400px;
 }
+
+
+/* popup css */
+
+.pull-right {
+  text-align: right
+}

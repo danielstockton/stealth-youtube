@@ -1,8 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "Stealth Youtube",
-  "description": "Listen to Youtube videos without anyone seeing what it is.",
+  "name": "Stealth Youtube - Because none of their business what you're listening to",
+  "short_name": "Stealth Youtube",
+  "description": "Listen to Youtube videos without anyone seeing what it is.\nDisguise your experience, act as if you're working on something important!",
   "version": "0.1",
   "permissions": [
     "*://www.youtube.com/*",

@@ -14,4 +14,4 @@ YouTube videos while you are enjoying YOUR quality music.
 Authors
 =======
 
-@danielstockton, @mihneasim and @ageventura
+@danielstockton, @mihneasim and @costinceciu
