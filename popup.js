@@ -3,6 +3,7 @@
 
   chrome.storage.sync.get('settings', function(storageValues) {
     var settings = storageValues.settings,
+        icon = 'icon.png',
         skin;
     if (settings === undefined)
       settings = GLOB.defaultSettings;
@@ -20,11 +21,17 @@
     $('#save').click(function() {
       settings.enabled = $('#enabled').is(':checked');
       settings.skin = $('#skin').val();
-      console.log(settings);
+
       chrome.storage.sync.set({settings: settings}, function() {
         alert('Settings saved. Reload tab for changes to be applied.');
+        if (!settings.enabled) {
+          icon = 'icon-off.png';
+        }
+        chrome.runtime.sendMessage({task: 'setIcon', iconPath: icon});
       });
+
     });
+
   });
 
 })();

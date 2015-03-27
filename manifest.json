@@ -27,5 +27,8 @@
       ],
       "run_at": "document_end"
     }
-  ]
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
 }
