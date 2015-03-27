@@ -6,7 +6,8 @@
   "version": "0.1",
   "permissions": [
     "*://www.youtube.com/*",
-    "storage"
+    "storage",
+    "tabs"
   ],
   "icons": { "128": "icon-128.png" },
   "browser_action": {

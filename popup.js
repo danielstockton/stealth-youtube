@@ -23,7 +23,7 @@
       settings.skin = $('#skin').val();
 
       chrome.storage.sync.set({settings: settings}, function() {
-        alert('Settings saved. Reload tab for changes to be applied.');
+
         if (!settings.enabled) {
           icon = 'icon-off.png';
         }

@@ -4,5 +4,13 @@ chrome.runtime.onMessage.addListener(
             chrome.browserAction.setIcon({
                 path: request.iconPath
             });
+
+            chrome.tabs.query(
+                {url: '*://*.youtube.com/*'},
+                function(results){
+                    for (var i=0; i < results.length; i++) {
+                        chrome.tabs.reload(results[i]['id'])
+                    }
+                })
         }
 });
