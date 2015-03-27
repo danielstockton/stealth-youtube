@@ -2,12 +2,12 @@ STEALTH_YOUTUBE_GLOBAL = {
 
     defaultSettings: {
         enabled: true,
-        skin: 'stackoverflow'
+        skin: 'spreadsheet'
     },
 
     availableSkins: [
-        ['stackoverflow', 'Stackoverflow (IT Geeks)'],
         ['spreadsheet', 'Spreadsheet (accountants)'],
+        ['stackoverflow', 'Stackoverflow (IT Geeks)'],
         ['webmd', 'WebMD (meds)']
     ]
 
