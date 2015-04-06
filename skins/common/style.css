@@ -24,8 +24,8 @@ html.stealth-mode #player-api { height: 50px }
 /* current video title */
 html.stealth-mode #eow-title { display: none }
 /* related links */
-html.stealth-mode span.yt-uix-simple-thumb-wrap
-{ display: none }
+html.stealth-mode span.yt-uix-simple-thumb-wrap, html.stealth-mode span.yt-pl-thumb
+{ visibility: hidden }
 html.stealth-mode #watch-related.video-list span.title
 { font-size: 10px; }
 
