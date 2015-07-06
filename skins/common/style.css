@@ -20,7 +20,7 @@ html.stealth-mode .yt-uix-button-icon-wrapper
 
 /* player */
 html.stealth-mode .html5-video-container { display: none }
-#placeholder-player { display: none }
+html.stealth-mode #placeholder-player { display: none }
 html.stealth-mode #player-api { height: 50px }
 /* current video title */
 html.stealth-mode #eow-title { display: none }
